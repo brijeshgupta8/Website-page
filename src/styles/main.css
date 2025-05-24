@@ -6,7 +6,7 @@
 
     /* COLORS */
     
-    --primary: #28CB8B;
+    --primary: #4CAF4F;
     --secondary: #263238;
     --info: #2194f3;
     --black: #263238;
@@ -51,6 +51,10 @@
     
 }
 
+button {
+    cursor: pointer;
+}
+
 .h-padding {
     padding-left: 144px;
     padding-right: 144px;
@@ -71,4 +75,8 @@
 
 .cursor-pointer {
     cursor: pointer;
+}
+
+.b-radius {
+    border-radius: 10px;
 }

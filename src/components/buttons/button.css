@@ -1,0 +1,42 @@
+.component.simple {
+    background-color: var(--primary);
+    border: 2px solid transparent;
+    color: var(--white);
+    height: 56px;
+    padding: 0 32px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+    outline: none;
+}
+
+.component.simple:focus {
+    border: 2px solid var(--d-gray);
+}
+
+.component.simple:active {
+    background-color: var(--shade-2);
+}
+
+.component.simple .text {
+    display: flex;
+    align-items: center;
+}
+
+.component.simple .letter {
+    transition: 0.5s;
+}
+
+.component.simple .letter.hover {
+    transform: scale(1.75);
+}
+
+.component.simple .icon {
+    transition: 0.2s;
+}
+
+.component.simple .icon.hover {
+    opacity: 0;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="button.css">
+    <title>Button</title>
+</head>
+
+<body
+    style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-direction: column; height: 100dvh;">
+    <!-- <button type="button" class="component simple b-radius">
+        <span class="text">
+            <span class="letter">H</span>
+            <span class="letter">e</span>
+            <span class="letter">l</span>
+            <span class="letter">l</span>
+            <span class="letter">o</span>
+        </span>
+    </button>
+    <button type="button" class="component simple b-radius">
+        <span class="text">
+            <span class="letter">H</span>
+            <span class="letter">e</span>
+            <span class="letter">l</span>
+            <span class="letter">l</span>
+            <span class="letter">o</span>
+        </span>
+        <span class="icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 16L19.2929 12.7071C19.6834 12.3166 19.6834 11.6834 19.2929 11.2929L16 8M19 12L5 12"
+                    stroke="white" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+        </span>
+    </button>
+    <button type="button" class="component simple b-radius">
+        <span class="icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 16L19.2929 12.7071C19.6834 12.3166 19.6834 11.6834 19.2929 11.2929L16 8M19 12L5 12"
+                stroke="white" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+        </span>
+        <span class="text">
+            <span class="letter">H</span>
+            <span class="letter">e</span>
+            <span class="letter">l</span>
+            <span class="letter">l</span>
+            <span class="letter">o</span>
+        </span>
+    </button>
+    <button type="button" class="component simple b-radius"></button> -->
+    <script type="module" defer>
+        import Button from './button.js';
+
+        const body = document.body;
+        const btn_normal = Button();
+        const btn_n_icon = Button({ type: 'n-icon' });
+        const btn_n_icon_reverse = Button({ type: 'n-icon', side: 'left' });
+        const btn_icon = Button({ type: 'icon' });
+
+        btn_normal.render(body);
+        btn_n_icon.render(body);
+        btn_n_icon_reverse.render(body);
+        btn_icon.render(body);
+    </script>
+</body>
+
+</html>
