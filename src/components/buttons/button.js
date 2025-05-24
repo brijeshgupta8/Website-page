@@ -66,9 +66,13 @@ function NormalButton(component, text) {
 
     for (let index = 0; index < text.length; index++) {
         const span_letter = document.createElement('span');
+        const letter = text.charAt(index);
 
         span_letter.classList.add('letter');
-        span_letter.textContent = text.charAt(index);
+        span_letter.textContent = letter;
+
+        if (letter === ' ') span_letter.setAttribute('style', 'width: 0.5ch');
+
         span_text.appendChild(span_letter);
     };
 
@@ -87,7 +91,7 @@ function IconButton(component, icon, side) {
     span_icon.classList.add('icon');
     span_icon.appendChild(icon);
 
-    if (side === 'left') component.appendChild(span_icon);
+    if (side === 'right') component.appendChild(span_icon);
     else component.prepend(span_icon);
 
     IconAnimation(component)

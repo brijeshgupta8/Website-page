@@ -45,6 +45,11 @@
 
     /* FONT SETTINGS */
 
+    /* PADDINGS */
+    --padding-h: 66px;
+    --padding-v: 100px;
+    /* PADDINGS */
+
     /* VARIABLES */ 
 
     font-family: 'Inter', sans-serif;
@@ -53,16 +58,6 @@
 
 button {
     cursor: pointer;
-}
-
-.h-padding {
-    padding-left: 144px;
-    padding-right: 144px;
-}
-
-.v-padding {
-    padding-top: 28px;
-    padding-bottom: 28px;
 }
 
 .fn-semi-bold {
@@ -78,5 +73,5 @@ button {
 }
 
 .b-radius {
-    border-radius: 10px;
+    border-radius: 4px;
 }

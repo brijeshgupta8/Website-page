@@ -1,6 +1,15 @@
 nav.component {
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+nav.component .wrapper {
+    width: 100%;
+    max-width: 1366px;
+    padding: 28px var(--padding-h);
+    display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
