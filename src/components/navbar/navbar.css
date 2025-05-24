@@ -1,0 +1,45 @@
+nav.component {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav.component #right,
+nav.component #right #navigations {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+nav.component #right #navigations {
+    list-style: none;
+}
+
+nav.component #right .navigation {
+    position: relative;
+}
+
+nav.component #right #navigations a {
+    color: var(--black);
+    text-decoration: none;
+}
+
+nav.component #right #navigations #indicator {
+    background-color: var(--primary);
+    border-radius: 50px;
+    height: 5px;
+    display: none;
+    position: absolute;
+    opacity: 0;
+    transition-behavior: allow-discrete;
+    transition-duration: 0.2s;
+}
+
+nav.component #right #navigations #indicator.visible {
+    display: block;
+    opacity: 1;
+
+    @starting-style {
+        opacity: 0;
+    }
+}

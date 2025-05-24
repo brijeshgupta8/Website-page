@@ -1,0 +1,74 @@
+@import 'css-reset-jc.css';
+@import url('https://fonts.cdnfonts.com/css/inter');
+
+:root {
+    /* VARIABLES */ 
+
+    /* COLORS */
+    
+    --primary: #28CB8B;
+    --secondary: #263238;
+    --info: #2194f3;
+    --black: #263238;
+    --d-gray: #4D4D4D;
+    --gray: #717171;
+    --l-gray: #89939E;
+    --gray-blue: #ABBED1;
+    --silver: #F5F7FA;
+    --white: #FFF;
+    --shade-1: #43A046;
+    --shade-2: #388E3B;
+    --shade-3: #237D31;
+    --shade-4: #1B5E1F;
+    --shade-5: #103E13;
+    --tint-1: #66BB69;
+    --tint-2: #81C784;
+    --tint-3: #A5D6A7;
+    --tint-4: #C8E6C9;
+    --tint-5: #E8F5E9;
+    --warning: #FBC02D;
+    --error: #E53835;
+    --success: #2E7D31;
+    
+    /* COLORS */
+
+    /* FONT SETTINGS */
+    
+    --h1: 64px;
+    --h2: 36px;
+    --h3: 28px;
+    --h4: 20px;
+    --fn-1: 18px;
+    --fn-2: 16px;
+    --fn-3: 14px;
+    --fn-4: 12px;
+
+    /* FONT SETTINGS */
+
+    /* VARIABLES */ 
+
+    font-family: 'Inter', sans-serif;
+    
+}
+
+.h-padding {
+    padding-left: 144px;
+    padding-right: 144px;
+}
+
+.v-padding {
+    padding-top: 28px;
+    padding-bottom: 28px;
+}
+
+.fn-semi-bold {
+    font-weight: 600;
+}
+
+.cursor-default {
+    cursor: default;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
