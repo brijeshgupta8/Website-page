@@ -2,6 +2,7 @@ import '../styles/main.css';
 import '../styles/landing-page.css';
 import '../components/buttons/button.css';
 import '../components/navbar/navbar.css';
+import '../components/card/simple-card/simple-card.css';
 
 import Navbar from "../components/navbar/navbar.js";
 import Button from '../components/buttons/button.js';
