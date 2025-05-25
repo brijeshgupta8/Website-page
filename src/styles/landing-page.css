@@ -1,13 +1,3 @@
-body {
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
-}
-
-#page__landing {
-    /* max-width: 1366px; */
-}
-
 #page__landing #header {
     background-color: var(--silver);
     display: flex;
@@ -98,7 +88,7 @@ body {
 
 #page__landing #affiliations #logo-affiliates .logo-icons svg {
     width: auto;
-    height: 48px;
+    height: 64px;
     margin: 0 64px;
     display: inline-block;
 }
@@ -141,4 +131,211 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
+}
+
+#page__landing .features {
+    padding-top: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page__landing .features .wrapper {
+    max-width: 1366px;
+    width: 100%;
+    padding: 0 66px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+#page__landing .features .wrapper .graphics {
+    flex-shrink: 0;
+}
+
+#page__landing .features .wrapper svg {
+    height: auto;
+    width: 500px;
+}
+
+#page__landing .features .wrapper .feature {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+#page__landing .features .wrapper .feature .title {
+    color: var(--d-gray);
+    font-size: var(--h2);
+}
+
+#page__landing .features .wrapper .feature .description {
+    color: var(--gray);
+}
+
+#page__landing #analytics {
+    background-color: var(--silver);
+    margin-top: 48px;
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page__landing #analytics .wrapper {
+    padding: 0 66px;
+    max-width: 1366px;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#page__landing #analytics .wrapper .headline {
+    flex-shrink: 1;
+}
+
+#page__landing #analytics .wrapper .title {
+    color: var(--d-gray);
+    font-size: var(--h2);
+}
+
+#page__landing #analytics .wrapper .title .highlight {
+    color: var(--primary)
+}
+
+#page__landing #analytics .wrapper .description {
+    color: var(--black);
+}
+
+#page__landing #analytics .wrapper .information {
+    flex-grow: 1;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    align-items: center;
+    justify-content: end;
+}
+
+#page__landing #analytics .wrapper .information .item {
+    width: calc(50% - 48px);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#page__landing #analytics .wrapper .information .item .graphics {
+    flex-shrink: 0;
+}
+
+#page__landing #analytics .wrapper .information .item .graphics svg {
+    height: 60px;
+    width: auto;
+}
+
+#page__landing #analytics .wrapper .information .item .data .number {
+    font-size: var(--h3);
+    color: var(--d-gray);
+}
+
+#page__landing #analytics .wrapper .information .item .data .tag {
+    color: var(--gray);
+    margin-top: -5px;
+}
+
+#page__landing #reviews {
+    background-color: var(--silver);
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page__landing #reviews .wrapper {
+    max-width: 1366px;
+    width: 100%;
+    padding: 80px 66px;
+    display: flex;
+    gap: 54px;
+    justify-content: space-between;
+}
+
+#page__landing #reviews .wrapper .graphics {
+    flex-shrink: 0;
+}
+
+#page__landing #reviews .wrapper .graphics img {
+    min-width: 400px;
+    height: auto;
+}
+
+#page__landing #reviews .wrapper .information {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    justify-content: space-between;
+}
+
+#page__landing #reviews .wrapper .information .description,
+#page__landing #reviews .wrapper .information #company {
+    color: var(--gray);
+}
+
+#page__landing #reviews .wrapper .information #name {
+    color: var(--primary);
+    font-size: var(--fn-1);
+}
+
+#page__landing #reviews .wrapper .information .more  {
+    display: flex;
+    justify-content: space-between;
+}
+
+#page__landing #reviews .wrapper .information .more .logo {
+    height: 56px;
+    width: auto;
+    display: block;
+}
+
+/* ADD BLOG LATER */
+
+#page__landing #blog {
+    height: 600px;
+}
+
+/* ADD BLOG LATER */
+
+#page__landing #demo {
+    background-color: var(--silver);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page__landing #demo .wrapper {
+    max-width: 1366px;
+    width: 100%;
+    padding: 80px 66px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
+    justify-content: center;
+}
+
+#page__landing #demo .wrapper .title {
+    font-size: var(--h1);
+    color: var(--black);
+    max-width: 700px;
+    line-height: 110%;
+    text-align: center;
+}
+
+footer {
+    background-color: var(--black);
+    height: 400px;
 }

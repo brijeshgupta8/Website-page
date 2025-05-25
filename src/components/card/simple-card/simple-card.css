@@ -4,6 +4,7 @@
     box-shadow: 0 4px 2px 1px rgba(171, 190, 209, 0.3);
     max-width: 300px;
     padding: 22px;
+    transition: 0.2s;
 }
 
 .component.simple-card .graphics {
@@ -29,4 +30,9 @@
 .component.simple-card .description {
     color: var(--gray);
     text-align: center;
+}
+
+.component.simple-card:hover {
+    box-shadow: 0 3px 5px 0px rgba(171, 190, 209, 0.3);
+    transform: scale(1.05);
 }
