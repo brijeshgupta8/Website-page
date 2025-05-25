@@ -13,7 +13,7 @@ const App = function() {
     const header_action = sect_header.querySelector('.action'); 
 
     const navbar = Navbar.render();
-    main.prepend(navbar);
+    body.prepend(navbar);
 
     const btn_header = Button({ text: 'Register' });
     btn_header.render(header_action);
