@@ -4,6 +4,10 @@ const arrow = `
 </svg>
 `;
 
+const chevron = `
+<?xml version="1.0" ?><svg class="feather feather-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"/></svg>
+`;
+
 const SVG = function () {
     const range = document.createRange();
     let fragment;
@@ -11,6 +15,10 @@ const SVG = function () {
     return {
         arrow: () => {
             fragment = range.createContextualFragment(arrow);
+            return fragment.querySelector('svg');
+        },
+        chevron: () => {
+            fragment = range.createContextualFragment(chevron);
             return fragment.querySelector('svg');
         }
     }

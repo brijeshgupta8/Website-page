@@ -1,7 +1,7 @@
 import '../styles/main.css';
 import '../styles/responsive-landing-page.css';
 import '../components/buttons/button.css';
-import '../components/navbar/navbar.css';
+import '../components/navbar/responsive-navbar.css';
 import '../components/card/simple-card/simple-card.css';
 import '../components/card/blog-card/blog-card.css';
 

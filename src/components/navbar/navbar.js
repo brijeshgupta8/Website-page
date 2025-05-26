@@ -1,3 +1,4 @@
+import SVG from "../../scripts/svg.js";
 import Button from "../buttons/button.js";
 
 const Navbar = function () {
@@ -42,7 +43,7 @@ const Navbar = function () {
                 </div>
             </div>
             <div id="right">
-                <ul class="cursor-pointer" id="navigations">
+                <ul class="" id="navigations">
                     <li class="navigation"><a href="#">Home</a></li>
                     <li class="navigation"><a href="#">Features</a></li>
                     <li class="navigation"><a href="#">Community</a></li>
@@ -61,15 +62,17 @@ const Navbar = function () {
     const cont_right = component.querySelector('#right');
     const ul_navigations = cont_right.querySelector('#navigations');
     const li_navigations = ul_navigations.querySelectorAll('li');
-    const button = Button({ 
+    const button = Button({
         text: 'Register Now',
-        type: 'n-icon' 
+        type: 'n-icon'
     });
 
     button.render(cont_right);
     ul_navigations.appendChild(indicator);
     indicator.setAttribute('id', 'indicator');
     li_navigations.forEach(navigation => HoverAnimation(navigation, indicator));
+
+    Reactivity(component, button.render());
 
     /**
      * Renders the component.
@@ -127,6 +130,84 @@ function HoverAnimation(navigation, indicator) {
     });
 
     navigation.addEventListener('mouseleave', () => removeIndicator());
+};
+
+/**
+ * 
+ * @param {HTMLElement} component 
+ */
+function Reactivity(component, button) {
+    const overlay = document.createElement('div');
+    overlay.classList.add('overlay');
+    component.appendChild(overlay);
+
+    const side_navigation = document.createElement('div');
+    side_navigation.setAttribute('id', 'side-navigation');
+    component.appendChild(side_navigation);
+
+    const button_side = Button({
+        type: 'icon',
+        icon: SVG.chevron()
+    });
+    const button_side_close = Button({
+        type: 'icon',
+        icon: SVG.chevron()
+    });
+
+    button_side_close.render(side_navigation);
+    button_side_close.render().setAttribute('id', 'close');
+
+    const right = component.querySelector('#right');
+    const navigations = right.querySelector('#navigations');
+    const items = { navigation: navigations, button };
+    let windowWidth = window.innerWidth;
+
+    if (windowWidth <= 1020) {
+        side_navigation.appendChild(items.navigation);
+        side_navigation.appendChild(items.button);
+        button_side.render(right);
+    };
+
+    button_side.render().addEventListener('click', (e) => {
+        e.stopPropagation();
+
+        document.body.style.height = '100dvh';
+        document.body.style.overflowY = 'hidden';
+        side_navigation.classList.add('show');
+        overlay.classList.add('show');
+    });
+
+    button_side_close.render().addEventListener('click', (e) => {
+        e.stopPropagation();
+
+        document.body.style.height = '';
+        document.body.style.overflowY = '';
+        side_navigation.classList.remove('show');
+        overlay.classList.remove('show');
+    });
+
+    overlay.addEventListener('click', (e) => {
+        e.stopPropagation();
+
+        document.body.style.height = '';
+        document.body.style.overflowY = '';
+        side_navigation.classList.remove('show');
+        overlay.classList.remove('show');
+    })
+
+    window.addEventListener('resize', (e) => {
+        windowWidth = window.innerWidth;
+
+        if (windowWidth <= 1020) {
+            side_navigation.appendChild(items.navigation);
+            side_navigation.appendChild(items.button);
+            button_side.render(right);
+        } else {
+            right.appendChild(items.navigation);
+            right.appendChild(items.button);
+            button_side.unrender();
+        };
+    });
 };
 
 export default Navbar;

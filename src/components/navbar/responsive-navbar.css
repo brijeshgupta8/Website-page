@@ -1,0 +1,110 @@
+@import './navbar.css';
+
+nav.component #side-navigation {
+    background-color: var(--white);
+    border-left: 3px solid var(--primary);
+    width: 300px;
+    height: 100dvh;
+    padding: 28px;
+    display: none;
+    flex-direction: column;
+    align-items: start;
+    position: absolute;
+    top: 0;
+    right: -300px;
+    transition-behavior: allow-discrete;
+    transition-property: display, right;
+    transition-duration: 0.2s;
+    z-index: 5;
+}
+
+nav.component .overlay {
+    background-color: rgba(27, 94, 31, 0.1);
+    backdrop-filter: blur(3px);
+    height: 100dvh;
+    width: 100dvw;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition-behavior: allow-discrete;
+    transition-property: display, opacity;
+    transition-duration: 0.2s;
+    z-index: 4;
+}
+
+@media screen and (max-width: 1020px) {
+
+    nav.component .overlay.show {
+        display: block;
+        opacity: 1;
+
+        @starting-style {
+            opacity: 0;
+        }
+    }
+
+    nav.component #right button,
+    nav.component #side-navigation #close {
+        aspect-ratio: 1;
+        height: 56px;
+        padding: 0;
+    }
+
+    nav.component #right button svg {
+        transform: rotate(180deg);
+    }
+
+    nav.component #side-navigation #navigations {
+        padding: 0;
+    }
+
+    nav.component #side-navigation #navigations .navigation {
+        border-bottom: 2px solid transparent;
+        width: max-content;
+        margin-top: 32px;
+        transition: 0.2s;
+    }
+
+    nav.component #side-navigation #navigations .navigation:hover {
+        border-bottom: 2px solid var(--primary);
+    }
+
+    nav.component #side-navigation #navigations .navigation:last-of-type {
+        margin-bottom: 32px;
+    }
+
+    nav.component #side-navigation button:last-of-type {
+        width: 100%;
+    }
+
+    nav.component #side-navigation.show {
+        display: flex;
+        right: 0px;
+
+        @starting-style {
+            right: -300px;
+        }
+    }
+
+}
+
+@media screen and (max-width: 520px) {
+
+    nav.component #side-navigation {
+        width: 100%;
+        right: -100%;
+    }
+
+    nav.component #side-navigation.show {
+        border-left: 10px solid var(--primary);
+        display: flex;
+        right: 0px;
+
+        @starting-style {
+            right: -100%;
+        }
+    }
+
+}

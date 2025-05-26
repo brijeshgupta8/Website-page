@@ -2,6 +2,7 @@ nav.component {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 nav.component .wrapper {
@@ -20,7 +21,8 @@ nav.component #right #navigations {
     align-items: center;
 }
 
-nav.component #right #navigations {
+nav.component #right #navigations,
+nav.component #side-navigation #navigations {
     list-style: none;
 }
 
@@ -28,7 +30,8 @@ nav.component #right .navigation {
     position: relative;
 }
 
-nav.component #right #navigations a {
+nav.component #right #navigations a,
+nav.component #side-navigation a {
     color: var(--black);
     text-decoration: none;
 }
