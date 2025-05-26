@@ -1,0 +1,157 @@
+@import './landing-page.css';
+
+@media screen and (max-width: 1020px) {
+
+    #page__landing #header .wrapper {
+        flex-direction: column;
+        gap: 140px;
+    }
+
+    #page__landing #header #headline {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+    }
+
+    #page__landing #header .title,
+    #page__landing #header .sub-title {
+        text-align: center;
+    }
+
+    #page__landing #target-clients #clients {
+        flex-wrap: wrap;
+    }
+
+    #page__landing .features .wrapper,
+    #page__landing #reviews .wrapper,
+    footer .wrapper {
+        flex-direction: column;
+    }
+
+    #page__landing #reviews .wrapper {
+        gap: 0;
+    }
+
+    #page__landing #reviews .wrapper .graphics img {
+        width: 100%;
+    }
+
+    footer .wrapper {
+        gap: 120px;
+    }
+
+    footer .wrapper #legal {
+        order: 2
+    }
+
+    footer .wrapper #more-info {
+        max-width: 100%;
+        margin-top: 0;
+    }
+
+    #page__landing #header .icon {
+        flex-shrink: 1;
+    }
+
+}
+
+@media screen and (max-width: 990px) {
+
+    #page__landing #analytics .wrapper {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    #page__landing #analytics .wrapper .information {
+        justify-content: left;
+    }
+
+}
+
+@media screen and (max-width: 880px) {
+
+    @keyframes slide {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-100%);
+        }
+    }
+
+    #page__landing #affiliations #logo-affiliates {
+        display: flex;
+        align-items: center;
+    }
+
+    #page__landing #affiliations #logo-affiliates .logo-icons {
+        flex-shrink: 0;
+        padding: 0 0 0 66px;
+        animation: slide linear 15s infinite;
+    }
+
+    #page__landing #affiliations #logo-affiliates .logo-icons.copy {
+        display: flex;
+    }
+
+    #page__landing #affiliations #logo-affiliates .logo-icons svg:hover {
+        transform: translateY(-10px);
+    }
+
+}
+
+@media screen and (max-width: 720px) {
+
+    #page__landing #reviews .wrapper .graphics img {
+        min-width: auto;
+    }
+
+    #page__landing #reviews .wrapper .information .more {
+        margin-top: 50px;
+        flex-direction: column;
+        align-items: start;
+        justify-content: left;
+    }
+
+    footer .wrapper #more-info {
+        justify-content: left;
+        flex-wrap: wrap;
+        gap: 60px;
+    }
+
+    footer .wrapper #more-info .info-type#letter {
+        flex-grow: 1;
+        order: -1;
+
+        width: 100%;
+    }
+
+    footer .wrapper #more-info .info .email input {
+        flex-grow: 1;
+    }
+
+}
+
+@media screen and (max-width: 520px) {
+
+    #page__landing #analytics .wrapper .information {
+        row-gap: 28px;
+    }
+
+    #page__landing #analytics .wrapper .information .item {
+        width: 100%;
+    }
+
+    footer .wrapper {
+        padding: 66px var(--padding-h) 33px;
+    }
+
+    #page__landing #header .title,
+    #page__landing #demo .wrapper .title {
+        font-size: var(--h2);
+        line-height: normal;
+    }
+
+}

@@ -2,7 +2,7 @@
     background-color: var(--white);
     border-radius: 10px;
     box-shadow: 0 4px 2px 1px rgba(171, 190, 209, 0.3);
-    max-width: 300px;
+    max-width: 100%;
     padding: 22px;
     transition: 0.2s;
 }

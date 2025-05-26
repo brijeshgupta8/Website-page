@@ -2,10 +2,10 @@
 @import url('https://fonts.cdnfonts.com/css/inter');
 
 :root {
-    /* VARIABLES */ 
+    /* VARIABLES */
 
     /* COLORS */
-    
+
     --primary: #4CAF4F;
     --secondary: #263238;
     --info: #2194f3;
@@ -29,11 +29,11 @@
     --warning: #FBC02D;
     --error: #E53835;
     --success: #2E7D31;
-    
+
     /* COLORS */
 
     /* FONT SETTINGS */
-    
+
     --h1: 64px;
     --h2: 36px;
     --h3: 28px;
@@ -50,10 +50,10 @@
     --padding-v: 100px;
     /* PADDINGS */
 
-    /* VARIABLES */ 
+    /* VARIABLES */
 
     font-family: 'Inter', sans-serif;
-    
+
 }
 
 button {
@@ -74,4 +74,16 @@ button {
 
 .b-radius {
     border-radius: 4px;
+}
+
+@media screen and (max-width: 580px) {
+
+    :root {
+
+        /* PADDINGS */
+        --padding-h: 20px;
+        /* PADDINGS */
+        
+    }
+
 }

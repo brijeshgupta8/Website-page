@@ -57,12 +57,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-align: center;
 }
 
 #page__landing #affiliations .title {
     color: var(--d-gray);
     font-size: var(--h2);
-    text-align: center;
 }
 
 #page__landing #affiliations .sub-title {
@@ -77,7 +77,9 @@
 }
 
 #page__landing #affiliations #logo-affiliates .logo-icons {
+    padding: 0 66px;
     display: flex;
+    gap: 64px;
     align-items: center;
     justify-content: center;
 }
@@ -89,8 +91,8 @@
 #page__landing #affiliations #logo-affiliates .logo-icons svg {
     width: auto;
     height: 64px;
-    margin: 0 64px;
     display: inline-block;
+    transition: 0.2s;
 }
 
 #page__landing #target-clients {
@@ -103,7 +105,7 @@
 #page__landing #target-clients .wrapper {
     max-width: 1366px;
     width: 100%;
-    padding: 0 66px;
+    padding: 0 var(--padding-h);
 }
 
 #page__landing #target-clients .headline {
@@ -128,9 +130,8 @@
 
 #page__landing #target-clients #clients {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: center;
+    gap: 40px;
 }
 
 #page__landing .features {
@@ -143,7 +144,7 @@
 #page__landing .features .wrapper {
     max-width: 1366px;
     width: 100%;
-    padding: 0 66px;
+    padding: 0 var(--padding-h);
     display: flex;
     gap: 30px;
     align-items: center;
@@ -184,7 +185,7 @@
 }
 
 #page__landing #analytics .wrapper {
-    padding: 0 66px;
+    padding: 0 var(--padding-h);
     max-width: 1366px;
     width: 100%;
     display: flex;
@@ -257,14 +258,10 @@
 #page__landing #reviews .wrapper {
     max-width: 1366px;
     width: 100%;
-    padding: 80px 66px;
+    padding: 80px var(--padding-h);
     display: flex;
     gap: 54px;
     justify-content: space-between;
-}
-
-#page__landing #reviews .wrapper .graphics {
-    flex-shrink: 0;
 }
 
 #page__landing #reviews .wrapper .graphics img {
@@ -292,13 +289,19 @@
 
 #page__landing #reviews .wrapper .information .more  {
     display: flex;
+    gap: 22px;
+}
+
+#page__landing #reviews .wrapper .information .more .logos {
+    display: flex;
+    gap: 22px;
+    align-items: center;
     justify-content: space-between;
 }
 
 #page__landing #reviews .wrapper .information .more .logo {
     height: 56px;
     width: auto;
-    display: block;
 }
 
 #page__landing #reviews .wrapper .information .more  .action {
@@ -322,7 +325,7 @@
 #page__landing #blog .wrapper {
     max-width: 1366px;
     width: 100%;
-    padding: 80px 66px;
+    padding: 80px var(--padding-h);
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -334,6 +337,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 #page__landing #blog .wrapper .headline .title {
@@ -344,7 +348,6 @@
 #page__landing #blog .wrapper .headline .sub-title {
     color: var(--gray);
     max-width: 650px;
-    text-align: center;
 }
 
 #page__landing #blog .wrapper #blog-articles {
@@ -365,7 +368,7 @@
 #page__landing #demo .wrapper {
     max-width: 1366px;
     width: 100%;
-    padding: 80px 66px;
+    padding: 80px var(--padding-h);
     display: flex;
     flex-direction: column;
     gap: 48px;
@@ -391,7 +394,7 @@ footer {
 footer .wrapper {
     max-width: 1366px;
     width: 100%;
-    padding: 66px;
+    padding: var(--padding-h);
     display: flex;
     justify-content: space-between;
 }
@@ -488,7 +491,7 @@ footer .wrapper #more-info .info a {
 }
 
 footer .wrapper #more-info .info a:hover {
-    border-bottom: 2px solid var(--white);
+    border-bottom: 2px solid var(--primary);
 }
 
 footer .wrapper #more-info .info .email {
@@ -497,6 +500,7 @@ footer .wrapper #more-info .info .email {
     padding: 7px 10px;
     display: flex;
     align-items: center;
+    transition: 0.2s;
 }
 
 footer .wrapper #more-info .info .email input {
@@ -525,4 +529,8 @@ footer .wrapper #more-info .info .email button {
 footer .wrapper #more-info .info .email button svg {
     width: auto;
     height: 18px;
+}
+
+footer .wrapper #more-info .info .email:has(button:hover) {
+    background-color: var(--primary);
 }

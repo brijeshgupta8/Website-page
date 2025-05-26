@@ -1,5 +1,5 @@
 import '../styles/main.css';
-import '../styles/landing-page.css';
+import '../styles/responsive-landing-page.css';
 import '../components/buttons/button.css';
 import '../components/navbar/navbar.css';
 import '../components/card/simple-card/simple-card.css';
@@ -30,6 +30,11 @@ const App = function() {
     const action_feature_1 = sect_feature_1.querySelector('.feature .action');
     const btn_action_feature_1 = Button({ text: 'Learn More' });
     btn_action_feature_1.render(action_feature_1); 
+    
+    const sect_feature_2 = main.querySelector('#feature-2');
+    const action_feature_2 = sect_feature_2.querySelector('.feature .action');
+    const btn_action_feature_2 = Button({ text: 'Learn More' });
+    btn_action_feature_2.render(action_feature_2); 
 
     const sect_reviews = main.querySelector('#reviews');
     const img_reviews = sect_reviews.querySelector('#img-review');
