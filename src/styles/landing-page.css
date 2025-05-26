@@ -301,6 +301,17 @@
     display: block;
 }
 
+#page__landing #reviews .wrapper .information .more  .action {
+    font-size: var(--fn-1);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+#page__landing #reviews .wrapper .information .more  .action button {
+    padding: 0;
+}
+
 #page__landing #blog {
     margin-bottom: 80px;
     display: flex;
@@ -372,5 +383,146 @@
 
 footer {
     background-color: var(--black);
-    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .wrapper {
+    max-width: 1366px;
+    width: 100%;
+    padding: 66px;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .wrapper #legal {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+footer .wrapper #legal svg {
+    height: 40px;
+    width: auto;
+}
+
+footer .wrapper #legal #rights {
+    color: var(--white);
+    font-size: var(--fn-3);
+    font-weight: 200;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+footer .wrapper #legal #links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+footer .wrapper #legal #links a {
+    background-color: var(--gray);
+    border-radius: 50%;
+    padding: 3px;
+    position: relative;
+    overflow: hidden;
+}
+
+footer .wrapper #legal #links a .color {
+    background-color: var(--primary);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: 0.2s;
+    top: 100%;
+    left: 0;
+}
+
+footer .wrapper #legal #links a:hover .color {
+    top: 0%;
+}
+
+footer .wrapper #legal #links a svg {
+    fill: var(--white);
+    width: auto;
+    height: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+footer .wrapper #more-info {
+    max-width: 60%;
+    width: 100%;
+    margin-top: 13px;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .wrapper #more-info .info-type {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+footer .wrapper #more-info .title {
+    color: var(--white);
+    font-size: var(--fn-1);
+}
+
+footer .wrapper #more-info .info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+footer .wrapper #more-info .info a {
+    border-bottom: 2px solid transparent;
+    color: var(--white);
+    font-size: var(--fn-3);
+    font-weight: 200;
+    width: max-content;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+footer .wrapper #more-info .info a:hover {
+    border-bottom: 2px solid var(--white);
+}
+
+footer .wrapper #more-info .info .email {
+    background-color: var(--gray);
+    border-radius: 5px;
+    padding: 7px 10px;
+    display: flex;
+    align-items: center;
+}
+
+footer .wrapper #more-info .info .email input {
+    background-color: transparent;
+    border: 0;
+    color: var(--white);
+    font-size: var(--fn-3);
+    font-weight: 200;
+    outline: none;
+}
+
+footer .wrapper #more-info .info .email input::placeholder {
+    color: var(--white);
+    font-size: var(--fn-3);
+    font-weight: 200;
+}
+
+footer .wrapper #more-info .info .email button {
+    flex-shrink: 0;
+
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+}
+
+footer .wrapper #more-info .info .email button svg {
+    width: auto;
+    height: 18px;
 }

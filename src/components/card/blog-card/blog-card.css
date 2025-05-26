@@ -1,9 +1,10 @@
 .component.blog-card {
     flex: 1 1 30%;
-    
+
     max-width: 100%;
     min-width: 290px;
     position: relative;
+    transition: 0.2s;
 }
 
 .component.blog-card img {
@@ -33,4 +34,8 @@
     color: var(--gray);
     font-size: var(--fn-1);
     text-align: center;
+}
+
+.component.blog-card:hover {
+    transform: translateY(-10px) scale(1.02);
 }
