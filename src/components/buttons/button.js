@@ -4,7 +4,8 @@ function Button({
     text = 'Button',
     type = 'normal',
     icon = SVG.arrow(),
-    side = 'right'
+    side = 'right',
+    background = true
 } = {}) {
     const template = `
     <button type="button" class="component simple b-radius">
@@ -27,6 +28,8 @@ function Button({
             IconButton(component, icon, side);
             break;
     };
+
+    if (!background) component.classList.add('no-bg');
 
     /**
      * Renders the component.

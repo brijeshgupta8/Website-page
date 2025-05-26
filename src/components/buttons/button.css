@@ -12,6 +12,16 @@
     outline: none;
 }
 
+.component.simple.no-bg {
+    background-color: transparent;
+    color: var(--primary);
+    height: auto;
+}
+
+.component.simple.no-bg svg {
+    stroke: var(--primary);
+}
+
 .component.simple:focus {
     border: 2px solid var(--d-gray);
 }
@@ -39,4 +49,8 @@
 
 .component.simple .icon.hover {
     opacity: 0;
+}
+
+.component.simple svg {
+    stroke: var(--white);
 }
