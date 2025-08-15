@@ -34,7 +34,7 @@ const App = function() {
                 <input type="text" name="_honey" style="display: none;">
                 
                 <!-- Redirect after submission -->
-                <input type="hidden" name="_next" value="/thank-you.html">
+                <input type="hidden" name="_next" value="https://www.ninevector.com/thank-you.html">
                 
                 <label for="name">Name*</label>
                 <input type="text" id="name" name="name" required style="width:100%;margin-bottom:1rem;padding:0.5rem;border:1px solid #ddd;border-radius:4px;">
