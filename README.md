@@ -1,38 +1,76 @@
-# Nexcent Landing Page
+# NineVector - Digital Marketing Agency
 
-✨ An amazing, wonderful landing page design created by [Muntasir Billah](https://www.figma.com/@itsmuntasirb) in Figma, used as a practice for creating websites.
+✨ A professional digital marketing agency website for NineVector, providing comprehensive digital marketing services including website development, social media management, and online advertising campaigns.
 
-🔗 You can find the original design [here](https://www.figma.com/community/file/1222060007934600841).
+Built using the amazing design template created by [Muntasir Billah](https://www.figma.com/@itsmuntasirb) in Figma.
+
+🔗 Original design template can be found [here](https://www.figma.com/community/file/1222060007934600841).
 
 ---
 
-## 🛠 Tools Used
+## 🚀 About NineVector
 
-- HTML
-- CSS
-- JavaScript
+NineVector specializes in transforming businesses through expert digital marketing solutions:
+
+- **Website Development** - Modern, responsive websites that convert visitors into customers
+- **Social Media Management** - Strategic social media presence and engagement
+- **Online Advertising** - Targeted campaigns for maximum ROI and business growth
+
+We help businesses of all sizes build a powerful digital presence and accelerate growth in today's competitive market.
+
+---
+
+## 🛠 Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript (ES6+)
 - Webpack
-- Figma
+- Responsive Design
+- FormSubmit (Contact Form)
 
 ---
 
-## 🎨 Design Preview
+## 🎯 Target Industries
 
-![Preview](https://github.com/Poufles/adz-pp-muntasir-landing-page/blob/main/src/assets/img/Landing%20Page.png?raw=true)
-
----
-
-## 📚 More Info
-
-> This project is simply for **learning and practice**. I also added some animations and responsiveness to his design from my own proper understanding.
-> The design used does **not belong to me** but to [Muntasir Billah](https://www.figma.com/@itsmuntasirb).  
-> Please check out their designs – they are really worth a look! 🙌
+- Schools & Educational Institutions
+- Restaurants & Bakeries  
+- Salons & Retail Businesses
+- Small to Medium Enterprises
 
 ---
 
-## 🔗 Links
+## 📱 Features
 
-- [Twitter](https://x.com/Vqliant)
-- [Instagram](https://www.instagram.com/poufsadev/)
+- Fully responsive design
+- Professional contact form with spam protection
+- Smooth navigation between sections
+- Modern UI/UX optimized for conversions
+- Fast loading and SEO-friendly structure
 
-*Any constructive critics are always welcome !*
+---
+
+## 🚀 Deployment
+
+This website is deployed on Vercel for fast, reliable hosting with automatic deployments.
+
+---
+
+## 📚 Credits & Acknowledgments
+
+> This website uses a design template originally created by [Muntasir Billah](https://www.figma.com/@itsmuntasirb) and released under Creative Commons license for community use.
+> 
+> The original design has been customized and adapted specifically for NineVector's digital marketing services, with content, branding, and functionality tailored to our business needs.
+>
+> **Original Design Credits:** [Muntasir Billah](https://www.figma.com/@itsmuntasirb)  
+> **Design Source:** [Figma Community](https://www.figma.com/community/file/1222060007934600841)
+
+---
+
+## 📞 Contact NineVector
+
+Ready to grow your business online? Get in touch with us to discuss your digital marketing needs.
+
+---
+
+*Built with ❤️ by

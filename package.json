@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "dev": "webpack serve --config webpack.dev.js"
+    "dev": "webpack serve --config webpack.dev.js",
+    "start:watch": "nodemon"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +22,15 @@
     "webpack": "^5.99.9",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.1",
-    "webpack-merge": "^6.0.1"
+    "webpack-merge": "^6.0.1",
+    "nodemon": "^3.1.0"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "js,html,css",
+    "exec": "npm run dev"
   }
+  
 }
