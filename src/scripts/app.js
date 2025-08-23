@@ -89,20 +89,43 @@ const App = function () {
     const navbar = Navbar.render();
     body.prepend(navbar);
 
-    // Connect Register button in navbar to form
-    setTimeout(() => {
-        const registerBtn = navbar.querySelector('button');
+    // Connect Register button in navbar to form (works for both desktop and mobile)
+    function setupRegisterButton() {
+        // Look for register buttons in both main navbar and side navigation
+        const registerBtns = navbar.querySelectorAll('button');
         const formContainer = document.getElementById('form-container');
 
-        if (registerBtn && registerBtn.textContent.includes('Register') && formContainer) {
-            registerBtn.onclick = () => {
-                const form = document.getElementById('register-form');
-                const backdrop = document.getElementById('form-backdrop');
-                if (form) form.style.display = 'block';
-                if (backdrop) backdrop.classList.add('active');
-            };
-        }
-    }, 100);
+        registerBtns.forEach(btn => {
+            if (btn.textContent.includes('Register') && formContainer) {
+                btn.onclick = (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const form = document.getElementById('register-form');
+                    const backdrop = document.getElementById('form-backdrop');
+
+                    if (form) form.style.display = 'block';
+                    if (backdrop) backdrop.classList.add('active');
+
+                    // Close mobile menu if open
+                    const sideNavigation = navbar.querySelector('#side-navigation');
+                    const overlay = navbar.querySelector('.overlay');
+                    if (sideNavigation && sideNavigation.classList.contains('show')) {
+                        sideNavigation.classList.remove('show');
+                        overlay.classList.remove('show');
+                        document.body.style.height = '';
+                        document.body.style.overflowY = '';
+                    }
+                };
+            }
+        });
+    }
+
+    // Initial setup and re-setup on window resize (for mobile responsiveness)
+    setTimeout(setupRegisterButton, 100);
+    window.addEventListener('resize', () => {
+        setTimeout(setupRegisterButton, 100);
+    });
 
     // ...existing code for other buttons and sections...
     const sect_feature_1 = main.querySelector('#feature-1');
