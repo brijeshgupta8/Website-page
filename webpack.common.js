@@ -16,6 +16,11 @@ module.exports = {
             filename: 'index.html',
             template: "./src/index.html",
             chunk: ['app']
+        }),
+        new HWPP({
+            filename: 'thank-you.html',
+            template: "./src/thank-you.html",
+            chunk: []
         })
     ],
     module: {

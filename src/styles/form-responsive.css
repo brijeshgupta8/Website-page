@@ -1,0 +1,104 @@
+/* Responsive Form Styles */
+.service-form {
+    max-width: 90vw !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+}
+
+/* Form backdrop */
+.form-backdrop {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    z-index: 999 !important;
+    display: none !important;
+}
+
+.form-backdrop.active {
+    display: block !important;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .service-form {
+        width: 95vw !important;
+        min-width: unset !important;
+        padding: 1.5rem !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+    }
+
+    .service-form h2 {
+        font-size: 1.25rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .service-form label {
+        font-size: 0.9rem !important;
+        margin-bottom: 0.25rem !important;
+        display: block !important;
+        font-weight: 500 !important;
+    }
+
+    .service-form input {
+        padding: 0.75rem !important;
+        font-size: 1rem !important;
+        border: 1px solid #ddd !important;
+        border-radius: 6px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .service-form button {
+        padding: 0.875rem !important;
+        font-size: 1rem !important;
+        border-radius: 6px !important;
+        cursor: pointer !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        min-height: 44px !important;
+        /* Touch-friendly minimum */
+    }
+
+    .service-form button[type="submit"] {
+        background: #4CAF50 !important;
+        color: #fff !important;
+        border: none !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .service-form button[type="button"] {
+        background: #eee !important;
+        color: #333 !important;
+        border: none !important;
+    }
+}
+
+/* Small Mobile Styles */
+@media screen and (max-width: 480px) {
+    .service-form {
+        width: 98vw !important;
+        padding: 1rem !important;
+    }
+
+    .service-form h2 {
+        font-size: 1.1rem !important;
+    }
+
+    .service-form input {
+        padding: 0.875rem !important;
+    }
+}
+
+/* Landscape Mobile Styles */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    .service-form {
+        max-height: 85vh !important;
+        padding: 1rem !important;
+    }
+}

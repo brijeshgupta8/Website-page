@@ -1,5 +1,6 @@
 import '../styles/main.css';
 import '../styles/responsive-landing-page.css';
+import '../styles/form-responsive.css';
 import '../components/buttons/button.css';
 import '../components/navbar/responsive-navbar.css';
 import '../components/card/simple-card/simple-card.css';
@@ -14,124 +15,142 @@ import Navbar from "../components/navbar/navbar.js";
 import Button from '../components/buttons/button.js';
 import BlogCard from '../components/card/blog-card/blog-card.js';
 
-const App = function() {
-        const body = document.body;
-        const main = body.querySelector('main');
-        const sect_header = main.querySelector('#header');
+const App = function () {
+    const body = document.body;
+    const main = body.querySelector('main');
+    const sect_header = main.querySelector('#header');
 
-        // Helper to show form
-        function showRegisterForm() {
-            const form = document.getElementById('register-form');
-            if (form) form.style.display = 'block';
-        }
+    // Helper to show form
+    function showRegisterForm() {
+        const form = document.getElementById('register-form');
+        if (form) form.style.display = 'block';
+    }
 
-        // Create register form HTML directly
-        const formHTML = `
-            <form id="register-form" class="service-form" action="https://formsubmit.co/atlearning123brijesh@gmail.com" method="POST" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:#fff; padding:2rem; box-shadow:0 2px 16px rgba(0,0,0,0.15); z-index:1000; border-radius:8px; min-width:300px;">
+    // Create register form HTML directly
+    const formHTML = `
+            <div id="form-backdrop" class="form-backdrop"></div>
+            <form id="register-form" class="service-form" action="https://formsubmit.co/atlearning123brijesh@gmail.com" method="POST" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:#fff; padding:2rem; box-shadow:0 2px 16px rgba(0,0,0,0.15); z-index:1000; border-radius:8px; min-width:300px; max-width:90vw; max-height:90vh; overflow-y:auto;">
                 <h2 style="margin-bottom:1rem;">Register Your Interest</h2>
                 
                 <!-- Spam Protection -->
                 <input type="text" name="_honey" style="display: none;">
                 
                 <!-- Redirect after submission -->
-                <input type="hidden" name="_next" value="/thank-you.html">
+                <input type="hidden" name="_next" value="./thank-you.html">
                 
-                <label for="name">Name*</label>
-                <input type="text" id="name" name="name" required style="width:100%;margin-bottom:1rem;padding:0.5rem;border:1px solid #ddd;border-radius:4px;">
+                <label for="name" style="display:block;margin-bottom:0.25rem;font-weight:500;">Name*</label>
+                <input type="text" id="name" name="name" required style="width:100%;margin-bottom:1rem;padding:0.75rem;border:1px solid #ddd;border-radius:4px;font-size:1rem;box-sizing:border-box;">
 
-                <label for="email">Email (optional)</label>
-                <input type="email" id="email" name="email" style="width:100%;margin-bottom:1rem;padding:0.5rem;border:1px solid #ddd;border-radius:4px;">
+                <label for="email" style="display:block;margin-bottom:0.25rem;font-weight:500;">Email (optional)</label>
+                <input type="email" id="email" name="email" style="width:100%;margin-bottom:1rem;padding:0.75rem;border:1px solid #ddd;border-radius:4px;font-size:1rem;box-sizing:border-box;">
 
-                <label for="contact">Contact Number*</label>
-                <input type="tel" id="contact" name="contact" required style="width:100%;margin-bottom:1rem;padding:0.5rem;border:1px solid #ddd;border-radius:4px;">
+                <label for="contact" style="display:block;margin-bottom:0.25rem;font-weight:500;">Contact Number*</label>
+                <input type="tel" id="contact" name="contact" required style="width:100%;margin-bottom:1rem;padding:0.75rem;border:1px solid #ddd;border-radius:4px;font-size:1rem;box-sizing:border-box;">
 
-                <label for="business">Business Name*</label>
-                <input type="text" id="business" name="business" required style="width:100%;margin-bottom:1rem;padding:0.5rem;border:1px solid #ddd;border-radius:4px;">
+                <label for="business" style="display:block;margin-bottom:0.25rem;font-weight:500;">Business Name*</label>
+                <input type="text" id="business" name="business" required style="width:100%;margin-bottom:1rem;padding:0.75rem;border:1px solid #ddd;border-radius:4px;font-size:1rem;box-sizing:border-box;">
 
-                <button type="submit" style="width:100%;background:#4CAF50;color:#fff;padding:0.75rem;border:none;border-radius:4px;cursor:pointer;font-size:1rem;">Submit</button>
-                <button type="button" id="close-form" style="width:100%;margin-top:0.5rem;background:#eee;color:#333;padding:0.5rem;border:none;border-radius:4px;cursor:pointer;">Cancel</button>
+                <button type="submit" style="width:100%;background:#4CAF50;color:#fff;padding:0.75rem;border:none;border-radius:4px;cursor:pointer;font-size:1rem;min-height:44px;">Submit</button>
+                <button type="button" id="close-form" style="width:100%;margin-top:0.5rem;background:#eee;color:#333;padding:0.5rem;border:none;border-radius:4px;cursor:pointer;min-height:44px;">Cancel</button>
             </form>
         `;
 
-        // Inject form into container
-        const formContainer = document.getElementById('form-container');
-        if (formContainer) {
-            formContainer.innerHTML = formHTML;
-            
-            // Set up event handlers
-            const form = document.getElementById('register-form');
-            const closeBtn = document.getElementById('close-form');
-            
-            if (closeBtn) {
-                closeBtn.onclick = () => {
-                    if (form) form.style.display = 'none';
-                };
-            }
-            
-            // FormSubmit will handle form submission - no custom JavaScript needed
+    // Inject form into container
+    const formContainer = document.getElementById('form-container');
+    if (formContainer) {
+        formContainer.innerHTML = formHTML;
+
+        // Set up event handlers
+        const form = document.getElementById('register-form');
+        const closeBtn = document.getElementById('close-form');
+        const backdrop = document.getElementById('form-backdrop');
+
+        function closeForm() {
+            if (form) form.style.display = 'none';
+            if (backdrop) backdrop.classList.remove('active');
         }
 
-        const navbar = Navbar.render();
-        body.prepend(navbar);
+        function showForm() {
+            if (form) form.style.display = 'block';
+            if (backdrop) backdrop.classList.add('active');
+        }
 
-        // Connect Register button in navbar to form
-        setTimeout(() => {
-            const registerBtn = navbar.querySelector('button');
-            if (registerBtn && registerBtn.textContent.includes('Register')) {
-                registerBtn.onclick = () => {
-                    const form = document.getElementById('register-form');
-                    if (form) form.style.display = 'block';
-                };
-            }
-        }, 100);
+        if (closeBtn) {
+            closeBtn.onclick = closeForm;
+        }
 
-        // ...existing code for other buttons and sections...
-        const sect_feature_1 = main.querySelector('#feature-1');
-        const action_feature_1 = sect_feature_1.querySelector('.feature .action');
-        const btn_action_feature_1 = Button({ text: 'Learn More' });
-        btn_action_feature_1.render(action_feature_1);
+        if (backdrop) {
+            backdrop.onclick = closeForm;
+        }
 
-        const sect_feature_2 = main.querySelector('#feature-2');
-        const action_feature_2 = sect_feature_2.querySelector('.feature .action');
-        const btn_action_feature_2 = Button({ text: 'Learn More' });
-        btn_action_feature_2.render(action_feature_2);
+        // FormSubmit will handle form submission - no custom JavaScript needed
+    }
 
-        const sect_reviews = main.querySelector('#reviews');
-        const img_reviews = sect_reviews.querySelector('#img-review');
-        const action_reviews = sect_reviews.querySelector('.action');
-        const btn_action_reviews = Button({
-            text: 'Meet all customers',
-            type: 'n-icon',
-            background: false
-        });
+    const navbar = Navbar.render();
+    body.prepend(navbar);
 
-        btn_action_reviews.render(action_reviews);
-        img_reviews.src = img_1;
+    // Connect Register button in navbar to form
+    setTimeout(() => {
+        const registerBtn = navbar.querySelector('button');
+        const formContainer = document.getElementById('form-container');
 
-        const sect_blog = main.querySelector('#blog');
-        const blog_articles = sect_blog.querySelector('#blog-articles');
+        if (registerBtn && registerBtn.textContent.includes('Register') && formContainer) {
+            registerBtn.onclick = () => {
+                const form = document.getElementById('register-form');
+                const backdrop = document.getElementById('form-backdrop');
+                if (form) form.style.display = 'block';
+                if (backdrop) backdrop.classList.add('active');
+            };
+        }
+    }, 100);
 
-        const blog_1 = BlogCard();
-        blog_1.title = 'How a Modern Website Can Transform Your Business';
-        blog_1.img = img_2;
-        blog_1.render(blog_articles);
+    // ...existing code for other buttons and sections...
+    const sect_feature_1 = main.querySelector('#feature-1');
+    const action_feature_1 = sect_feature_1.querySelector('.feature .action');
+    const btn_action_feature_1 = Button({ text: 'Learn More' });
+    btn_action_feature_1.render(action_feature_1);
 
-        const blog_2 = BlogCard();
-        blog_2.title = 'Social Media Strategies to Grow Your Brand';
-        blog_2.img = img_3;
-        blog_2.render(blog_articles);
+    const sect_feature_2 = main.querySelector('#feature-2');
+    const action_feature_2 = sect_feature_2.querySelector('.feature .action');
+    const btn_action_feature_2 = Button({ text: 'Learn More' });
+    btn_action_feature_2.render(action_feature_2);
 
-        const blog_3 = BlogCard();
-        blog_3.title = 'Digital Advertising: Reaching the Right Customers';
-        blog_3.img = img_4;
-        blog_3.render(blog_articles);
+    const sect_reviews = main.querySelector('#reviews');
+    const img_reviews = sect_reviews.querySelector('#img-review');
+    const action_reviews = sect_reviews.querySelector('.action');
+    const btn_action_reviews = Button({
+        text: 'Meet all customers',
+        type: 'n-icon',
+        background: false
+    });
 
-        const sect_demo = main.querySelector('#demo');
-        const action_demo = sect_demo.querySelector('.action');
-        const btn_action_demo = Button({
-            type: 'n-icon',
-            text: 'Get a Demo'
-        });
+    btn_action_reviews.render(action_reviews);
+    img_reviews.src = img_1;
 
-        btn_action_demo.render(action_demo);
+    const sect_blog = main.querySelector('#blog');
+    const blog_articles = sect_blog.querySelector('#blog-articles');
+
+    const blog_1 = BlogCard();
+    blog_1.title = 'How a Modern Website Can Transform Your Business';
+    blog_1.img = img_2;
+    blog_1.render(blog_articles);
+
+    const blog_2 = BlogCard();
+    blog_2.title = 'Social Media Strategies to Grow Your Brand';
+    blog_2.img = img_3;
+    blog_2.render(blog_articles);
+
+    const blog_3 = BlogCard();
+    blog_3.title = 'Digital Advertising: Reaching the Right Customers';
+    blog_3.img = img_4;
+    blog_3.render(blog_articles);
+
+    const sect_demo = main.querySelector('#demo');
+    const action_demo = sect_demo.querySelector('.action');
+    const btn_action_demo = Button({
+        type: 'n-icon',
+        text: 'Get a Demo'
+    });
+
+    btn_action_demo.render(action_demo);
 }();
