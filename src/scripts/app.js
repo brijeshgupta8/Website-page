@@ -30,7 +30,7 @@ const App = function () {
     const formHTML = `
             <div id="form-backdrop" class="form-backdrop"></div>
             <form id="register-form" class="service-form" action="https://formsubmit.co/atlearning123brijesh@gmail.com" method="POST" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:#fff; padding:2rem; box-shadow:0 2px 16px rgba(0,0,0,0.15); z-index:1000; border-radius:8px; min-width:300px; max-width:90vw; max-height:90vh; overflow-y:auto;">
-                <h2 style="margin-bottom:1rem;">Register Your Interest</h2>
+                <h2 style="margin-bottom:1rem;">Start Your Free Trial</h2>
                 
                 <!-- Spam Protection -->
                 <input type="text" name="_honey" style="display: none;">
@@ -38,19 +38,27 @@ const App = function () {
                 <!-- Redirect after submission -->
                 <input type="hidden" name="_next" value="./thank-you.html">
                 
-                <label for="name" style="display:block;margin-bottom:0.25rem;font-weight:500;">Name*</label>
+                <label for="name" style="display:block;margin-bottom:0.25rem;font-weight:500;">Full Name*</label>
                 <input type="text" id="name" name="name" required style="width:100%;margin-bottom:1rem;padding:0.75rem;border:1px solid #ddd;border-radius:4px;font-size:1rem;box-sizing:border-box;">
 
-                <label for="email" style="display:block;margin-bottom:0.25rem;font-weight:500;">Email (optional)</label>
-                <input type="email" id="email" name="email" style="width:100%;margin-bottom:1rem;padding:0.75rem;border:1px solid #ddd;border-radius:4px;font-size:1rem;box-sizing:border-box;">
+                <label for="email" style="display:block;margin-bottom:0.25rem;font-weight:500;">Email*</label>
+                <input type="email" id="email" name="email" required style="width:100%;margin-bottom:1rem;padding:0.75rem;border:1px solid #ddd;border-radius:4px;font-size:1rem;box-sizing:border-box;">
 
                 <label for="contact" style="display:block;margin-bottom:0.25rem;font-weight:500;">Contact Number*</label>
                 <input type="tel" id="contact" name="contact" required style="width:100%;margin-bottom:1rem;padding:0.75rem;border:1px solid #ddd;border-radius:4px;font-size:1rem;box-sizing:border-box;">
 
-                <label for="business" style="display:block;margin-bottom:0.25rem;font-weight:500;">Business Name*</label>
-                <input type="text" id="business" name="business" required style="width:100%;margin-bottom:1rem;padding:0.75rem;border:1px solid #ddd;border-radius:4px;font-size:1rem;box-sizing:border-box;">
+                <label for="exam" style="display:block;margin-bottom:0.25rem;font-weight:500;">Target Exam*</label>
+                <select id="exam" name="exam" required style="width:100%;margin-bottom:1rem;padding:0.75rem;border:1px solid #ddd;border-radius:4px;font-size:1rem;box-sizing:border-box;">
+                    <option value="">Select your target exam</option>
+                    <option value="SSC CGL">SSC CGL</option>
+                    <option value="SSC CHSL">SSC CHSL</option>
+                    <option value="Banking">Banking (IBPS/SBI)</option>
+                    <option value="Railway">Railway (RRB)</option>
+                    <option value="State Govt">State Government Exams</option>
+                    <option value="Other">Other</option>
+                </select>
 
-                <button type="submit" style="width:100%;background:#4CAF50;color:#fff;padding:0.75rem;border:none;border-radius:4px;cursor:pointer;font-size:1rem;min-height:44px;">Submit</button>
+                <button type="submit" style="width:100%;background:#4CAF50;color:#fff;padding:0.75rem;border:none;border-radius:4px;cursor:pointer;font-size:1rem;min-height:44px;">Start Free Trial</button>
                 <button type="button" id="close-form" style="width:100%;margin-top:0.5rem;background:#eee;color:#333;padding:0.5rem;border:none;border-radius:4px;cursor:pointer;min-height:44px;">Cancel</button>
             </form>
         `;
@@ -142,7 +150,7 @@ const App = function () {
     const img_reviews = sect_reviews.querySelector('#img-review');
     const action_reviews = sect_reviews.querySelector('.action');
     const btn_action_reviews = Button({
-        text: 'Meet all customers',
+        text: 'See all success stories',
         type: 'n-icon',
         background: false
     });
@@ -154,17 +162,17 @@ const App = function () {
     const blog_articles = sect_blog.querySelector('#blog-articles');
 
     const blog_1 = BlogCard();
-    blog_1.title = 'How a Modern Website Can Transform Your Business';
+    blog_1.title = '10 Proven Tips to Ace SSC CGL in Your First Attempt';
     blog_1.img = img_2;
     blog_1.render(blog_articles);
 
     const blog_2 = BlogCard();
-    blog_2.title = 'Social Media Strategies to Grow Your Brand';
+    blog_2.title = 'Time Management Strategies for Competitive Exams';
     blog_2.img = img_3;
     blog_2.render(blog_articles);
 
     const blog_3 = BlogCard();
-    blog_3.title = 'Digital Advertising: Reaching the Right Customers';
+    blog_3.title = 'How Mock Tests Can Boost Your Score by 30%';
     blog_3.img = img_4;
     blog_3.render(blog_articles);
 
@@ -172,8 +180,21 @@ const App = function () {
     const action_demo = sect_demo.querySelector('.action');
     const btn_action_demo = Button({
         type: 'n-icon',
-        text: 'Get a Demo'
+        text: 'Start Free Trial'
     });
 
     btn_action_demo.render(action_demo);
+
+    // Connect "Start Free Trial" button to form
+    const demoButton = action_demo.querySelector('button');
+    if (demoButton) {
+        demoButton.onclick = (e) => {
+            e.preventDefault();
+            const form = document.getElementById('register-form');
+            const backdrop = document.getElementById('form-backdrop');
+
+            if (form) form.style.display = 'block';
+            if (backdrop) backdrop.classList.add('active');
+        };
+    }
 }();

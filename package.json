@@ -1,7 +1,7 @@
 {
-  "name": "muntasir-landing-page",
+  "name": "ninevector-landing-page",
   "version": "1.0.0",
-  "description": "A simple practice landing page website designed by Muntasir Billah and realised with HTML, CSS, and JS.",
+  "description": "NineVector - An affordable mock test platform for competitive exams including SSC, Banking, Railway, and Government jobs. Built with HTML, CSS, and JavaScript.",
   "main": "app.js",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
@@ -32,5 +32,4 @@
     "ext": "js,html,css",
     "exec": "npm run dev"
   }
-  
 }
